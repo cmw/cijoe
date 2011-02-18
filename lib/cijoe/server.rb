@@ -22,6 +22,10 @@ class CIJoe
       joe.last_build.sha
     end
 
+    get '/test_cf' do
+     joe.last_build.notify 
+    end
+
     get '/?' do
       erb(:template, {}, :joe => joe)
     end
